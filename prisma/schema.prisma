@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// 链接配置
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// 定义模型
+// @db.UnsignedBigInt  非负
+model user {
+  id       BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
+  email    String    @unique
+  nickname String?
+  github   String?
+  wakatime String?
+  QQ       String?
+  articles article[]
+}
+
+model article {
+  id       BigInt   @id @default(autoincrement()) @db.UnsignedBigInt
+  title    String
+  content  String   @db.Text
+  createAt DateTime @default(now())
+  user     user     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId   BigInt   @db.UnsignedBigInt
+}
