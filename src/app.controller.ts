@@ -6,11 +6,13 @@ import { DbService } from './db.service';
 // 装饰器 类似于继承 用来增强类的功能
 @Controller()
 export class AppController {
-  constructor(private readonly config: ConfigService) {}
+  constructor(
+    private readonly config: ConfigService
+  ) {}
 
   @Get()
-  getHello(): any {
+  aaa(): any {
     // return '123321'
-    return this.config.get("upload.exts")
+    return this.config.get('upload.exts');
   }
 }
