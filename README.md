@@ -1,6 +1,7 @@
 # 
 
-
+## 快捷键
+ctrl + i ： 提示，触发建议
 
 
 ## Prisma的使用
@@ -8,6 +9,8 @@ npx prisma 查看prisma命令
 npx prisma init 初始化  
 npx prisma migrate dev  数据库创建表 | 迁徙表
 npx prisma format 创建执行关联关系
+schema 更新后需要 执行 npx prisma migrate dev 
+
 ## nest 命令
 -d 不是真正的服务  
 s 服务  
