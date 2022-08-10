@@ -10,6 +10,7 @@ npx prisma init 初始化
 npx prisma migrate dev  数据库创建表 | 迁徙表
 npx prisma format 创建执行关联关系
 schema 更新后需要 执行 npx prisma migrate dev 
+npx prisma reset 重置数据库（慎用）
 
 ## nest 命令
 -d 不是真正的服务  
