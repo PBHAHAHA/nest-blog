@@ -5,6 +5,7 @@ import { create } from '../helper';
 const prisma = new PrismaClient();
 
 export async function category() {
+  console.log("category-----start")
   create(5, async (prisma: PrismaClient) => {
     await prisma.category.create({
       data: {
@@ -12,4 +13,5 @@ export async function category() {
       },
     });
   });
+  console.log("category-----end")
 }

@@ -3,6 +3,7 @@ import { Random } from 'mockjs';
 import { create } from '../helper';
 
 export async function user() {
+  console.log("user-----start")
   create(5, async (prisma: PrismaClient) => {
     await prisma.user.create({
       data: {
@@ -14,4 +15,5 @@ export async function user() {
       },
     });
   });
+  console.log("user-----end")
 }
